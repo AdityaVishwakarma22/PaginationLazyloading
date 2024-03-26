@@ -15,8 +15,8 @@ function App() {
       try {
         const { data } = await axios.get(
           `https://rickandmortyapi.com/api/character/?name=${query}`
-          );
-          setCharacters(data.results);
+        );
+        setCharacters(data.results);
       } catch (error) {
         console.error(error);
       }
@@ -24,18 +24,17 @@ function App() {
     fetchData();
   }, [query]);
 
-
   const currentData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     // console.log(characters, ':::');
     // if (characters.length!==null || characters.length!==0 ){
-      return characters.slice(firstPageIndex, lastPageIndex);
+    return characters.slice(firstPageIndex, lastPageIndex);
     // }
-  }, [currentPage,characters]);
+  }, [currentPage, characters]);
 
   return (
-    <div className="App" >
+    <div className="App">
       <div className="search">
         <input
           type="text"
@@ -45,14 +44,6 @@ function App() {
           value={query}
         />
       </div>
-      <div className="results">
-        {currentData.map((character) => (
-          <div>
-            <img src={character.image} alt={character.name} />
-            {character.name}
-          </div>
-        ))}
-      </div>
       <Pagination
         className="pagination-bar"
         currentPage={currentPage}
@@ -60,6 +51,14 @@ function App() {
         pageSize={PageSize}
         onPageChange={(page) => setCurrentPage(page)}
       />
+      <div className="results">
+        {currentData.map((character) => (
+          <div className="character-tile">
+            <img src={character.image} alt={character.name} />
+            <p>{character.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

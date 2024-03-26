@@ -1,19 +1,29 @@
+body {
+  padding: 0 50px;
+}
+
 .results {
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+  display: flex;
+  gap: 25px;
+  margin: 35px auto 0px;
+  flex-wrap: wrap;
 }
 
 .search {
-  background-color: darkgray;
   text-align: center;
   padding: 15px;
 }
 
 .input {
-  font-size: 25px;
+  font-size: 20px;
+  border-radius: 20px;
+  outline: none;
+  border: 3px solid rgb(113, 106, 49);
+  padding: 5px 15px;
+  background-color: rgb(238, 253, 184);
+}
+
+.pagination-container {
+  justify-content: end;
+  padding: 0 100px;
 }

@@ -9,8 +9,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Characters/>} />
-        <Route path="/lazy" element={<Lazy/>} />
+        <Route path="/PaginationLazyloading" element={<Characters />} />
+        <Route path="/PaginationLazyloading/lazy" element={<Lazy />} />
       </Routes>
     </Router>
   );
