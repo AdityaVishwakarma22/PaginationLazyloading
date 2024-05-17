@@ -6,7 +6,10 @@ body {
   display: flex;
   gap: 25px;
   margin: 35px auto 0px;
+  padding: 0 64px;
   flex-wrap: wrap;
+  font-family: fantasy;
+  font-size: 22px;
 }
 
 .search {
@@ -18,12 +21,31 @@ body {
   font-size: 20px;
   border-radius: 20px;
   outline: none;
-  border: 3px solid rgb(113, 106, 49);
-  padding: 5px 15px;
-  background-color: rgb(238, 253, 184);
+  border: none;
+  padding: 16px 44px;
+  background-color: rgb(246 218 218);
+  margin-top: 40px;
+  caret-color: #c20e4b;
 }
 
 .pagination-container {
   justify-content: end;
   padding: 0 100px;
+}
+
+.pagination-container .pagination-item:not(.disabled) .arrow::before {
+  border-right: 0.2em solid #c20e4b !important;
+  border-top: 0.2em solid #c20e4b !important;
+}
+
+.pagination-container .pagination-item.disabled .arrow::before {
+  border-right: 0.2em solid #797375 !important;
+  border-top: 0.2em solid #797375 !important;
+}
+
+.list-container {
+  height: 300px;
+  overflow: auto;
+  margin: 40px auto;
+  width: 500px;
 }

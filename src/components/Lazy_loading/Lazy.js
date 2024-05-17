@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../Pagination/App.css";
 
 function InfiniteScroll() {
   const [data, setData] = useState([]);
@@ -26,20 +27,32 @@ function InfiniteScroll() {
       setStart(start + 10);
     }
   };
-
+  // style={{ height: "300px", overflow: "auto" }}
   return (
-    <div style={{ height: "300px", overflow: "auto" }} onScroll={handleScroll}>
-      {data.map((item) =>
-        item.map((i) => (
-          <div
-            key={item}
-            style={{ padding: "10px", border: "1px solid black" }}
-          >
-            {i.email}
-          </div>
-        ))
-      )}
-    </div>
+    <>
+      <div className="list-container" onScroll={handleScroll}>
+        {data.map((item) =>
+          item.map((i) => (
+            <div
+              key={item}
+              style={{ padding: "10px", border: "1px solid black" }}
+            >
+              {i.email}
+            </div>
+          ))
+        )}
+      </div>
+      <h2>Description</h2>
+      <p>
+        Notice the height of scroll-bar. Now scroll the content to end, which
+        would fetch more list elements resulting in shortening of scroll-bar
+        height.
+      </p>
+      <p>
+        Hence Lazy loading is implemented - here data is being fetched on
+        scrolling to the end and not on first load of page.
+      </p>
+    </>
   );
 }
 
