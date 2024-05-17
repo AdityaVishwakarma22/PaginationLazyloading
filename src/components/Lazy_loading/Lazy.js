@@ -42,16 +42,15 @@ function InfiniteScroll() {
           ))
         )}
       </div>
-      <h2>Description</h2>
-      <p>
-        Notice the height of scroll-bar. Now scroll the content to end, which
-        would fetch more list elements resulting in shortening of scroll-bar
-        height.
-      </p>
-      <p>
-        Hence Lazy loading is implemented - here data is being fetched on
-        scrolling to the end and not on first load of page.
-      </p>
+      <div className="lazy-description">
+        <h2>Description</h2>
+        <p>
+          Notice the scroll-bar height. Scroll to the end to fetch more items,
+          which shortens the scroll-bar. This demonstrates{" "}
+          <span>lazy loading</span> , where data loads on scroll instead of on
+          the initial page load.
+        </p>
+      </div>
     </>
   );
 }
